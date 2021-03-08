@@ -1,0 +1,150 @@
+@charset "utf-8";
+
+/*header*/
+
+
+#header{
+    padding: 30px 50px;    /*패딩으로 주야한다 마진으로 주면 스크롤이 생겨버림*/
+    position: fixed;
+    width: 100%;   /*가로값을 지정해주지 않고 띄우면 공백이 빠지고 왼쪽으로 다붙어 그래서 위드100%를 준다*/
+    box-sizing: border-box;   /*마진은 헤더사이징 안먹어*/
+    z-index: 1;      /*헤더메뉴가 이미지위로 움직이기때문에*/
+}
+#header h1{
+    float: left;    /*밑에 유틸아이콘들이 옆으로 오기위해*/
+}
+#header h1 a{}
+#header h1 img{}
+
+.util{
+    font-size: 12px;
+    float: right;          /*부모 플루트이면 cf필요없어*/
+}
+.util li{
+    float: left;
+    margin-left: 20px;       /*아이콘사이의 여백*/
+}
+.util li a{
+    background: url(../images/common/csIcon.png) no-repeat center top;  /*아이콘들이 텍스트기준으로 중앙으로*/
+    padding-top: 30px;                       /*a태그를 패딩을 줘 위로 올려버림 마진x*/
+    display: block;                  /*사진과 텍스트가 씹혀서 블락 고고*/
+}
+
+
+.util .lang a{           /*.lang까지만 적으면 li도 먹어 사진이 두개가 되어버려 lang이 li이니까*/
+    background-image: url(../images/common/langIcon.png);
+}
+
+.util .menu a{
+    background-image: url(../images/common/menuIcon.png);
+}
+
+/*footer*/
+
+#footer{
+    background: #333;
+    color: #999;
+    font-size: 13px;
+    padding: 30px 0;
+}
+#footer a{
+    color: #999;
+}
+
+#footer .inner{
+    position: relative;
+}
+.fMenu{
+    
+}
+.fMenu li{
+    float: left;
+    margin-right: 20px;
+}
+#footer .fMenu li:first-child a{color: #fff;}
+
+.fMenu li a{}
+
+.fInfo{
+    padding: 50px 0;
+    line-height: 25px;
+}
+.fInfo p{}
+
+
+.fInfo span{
+    vertical-align: middle;
+}
+.fInfo span::after{
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    background: #999;
+    margin: 0 5px;
+    vertical-align: middle;
+}
+.fInfo span:last-child::after{display: none;}
+.copy{}
+
+.fBtn{
+    position: absolute;
+    top:0;
+    right: 0;
+}
+.fBtnL,.family{   /*왼쪽기준으로 일단 맞춰줍시다*/
+    float: left;
+    width: 120px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 30px;
+    background: #111;
+    text-align: center;
+}
+.fBtnL a{}
+.family{
+    width: 200px;
+    background: none;
+    border: 1px solid #999;
+    box-sizing: border-box; 
+    margin-left: 10px;
+}
+.family select{
+    appearance:none;   /*화살표 없애주기*/
+    border: 0;
+    background: none;
+    width: 190px;      /*셀렉트는 인라인블락임*/
+    height: 35px;
+    color: #999;
+    outline: none;     /*검은색 없애기*/
+    text-indent: 20px; /*들여쓰기*/
+    background: url(../images/main/arrowBG.png)no-repeat 95% center;
+    vertical-align: top;
+    font: 13px 'NotoSans'; /*사이즈랑 폰트를 같이 적기/select는 폰트를 가지고 있다*/
+}
+
+/*오른쪽화살표*/
+
+.rightArrow{
+    position: fixed;
+    right: 0;
+    top:50%;              /*창기준으로 중간 밑에랑 같이*/
+    margin-top: -50px;
+    
+}
+.rightArrow>div{
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    line-height: 50px;
+    text-align: center;
+
+}
+.rightArrow>div a{
+    display: block;
+}
+.rightArrow>div img{
+    vertical-align: middle;
+}
